@@ -11,7 +11,7 @@ function recipe_init(){
         'new_item'              => __( 'New Recipes', 'recipe' ),
         'edit_item'             => __( 'Edit Recipes', 'recipe' ),
         'view_item'             => __( 'View Recipes', 'recipe' ),
-        'all_items'             => __( 'All Recipes', 'recipe' ),
+        'all_items'             => __( 'All Recipess', 'recipe' ),
         'search_items'          => __( 'Search Recipes', 'recipe' ),
         'parent_item_colon'     => __( 'Parent Recipes:', 'recipe' ),
         'not_found'             => __( 'No Recipes found.', 'recipe' ),
