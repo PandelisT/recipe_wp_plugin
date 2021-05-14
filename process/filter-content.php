@@ -6,11 +6,12 @@ function r_filter_recipe_content( $content ){
     }
 
     global $post, $wpdb;
-    $recipe_data        =   get_post_meta( $post->ID, 'recipe_data', true );
+    $recipe_data        =   $post->recipe_data;
     $recipe_html        =   file_get_contents( 'recipe-template.php', true );
     $recipe_html        =   str_replace( 'RATE_I18N', __("Rating", "recipe"), $recipe_html );
     $recipe_html        =   str_replace( 'RECIPE_ID', $post->ID, $recipe_html );
-    // $recipe_html        =   str_replace( 'RECIPE_RATING', $recipe_data['rating'], $recipe_html );
+    $rating             =   !empty($recipe_data['rating']) ? $recipe_data['rating'] : 0 ;
+    $recipe_html        =   str_replace( 'RECIPE_RATING', $rating, $recipe_html );
 
     $user_IP            =   $_SERVER['REMOTE_ADDR'];
 
@@ -29,3 +30,4 @@ function r_filter_recipe_content( $content ){
 
     return $recipe_html . $content;
 }
+
